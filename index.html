@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="https://js.arcgis.com/calcite-components/2.6.0/calcite.esm.js"></script>
     <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/2.6.0/calcite.css" />
-
+    <!-- imports avenir font -->
+    <link
+      href="https://gis.mtdeq.us/portal/jsapi/jsapi4/esri/themes/dark/main.css"
+      rel="stylesheet"
+      type="text/css"
+      data-theme="api-dark"
+    />
 </head>
 
 <body class="h-screen w-screen overflow-hidden bg-gradient-to-b from-white to-[#004A97] flex flex-col p-4">
     <div
         class="flex-none my-4  text-center">
-        <span class="font-bold text-xs sm:text-[26px] md:text-[26px]">Air Quality Health Effects for Particle
-            Pollution</span></div>
+        <strong class="text-[20.8px] sm:text-[26px]">Air Quality Health Effects for Particle
+            Pollution</strong></div>
     <table class="bg-white flex-grow text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl bg-white border border-black">
         <tr class="bg-[rgb(234,234,234)] max-h-[3%]">
             <th class="text-center p-1 border border-black w-[16%]">Levels of Concern</th>
@@ -63,8 +69,5 @@
         </tbody>
     </table>
 
-
-
 </body>
-
 </html>
