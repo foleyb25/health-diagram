@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://js.arcgis.com/calcite-components/2.6.0/calcite.esm.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://js.arcgis.com/calcite-components/2.6.0/calcite.css"
+    />
+    <!-- imports avenir font -->
+    <link
+      href="https://gis.mtdeq.us/portal/jsapi/jsapi4/esri/themes/dark/main.css"
+      rel="stylesheet"
+      type="text/css"
+      data-theme="api-dark"
+    />
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  </head>
+
+  <body
+    class="h-screen w-screen overflow-hidden bg-gradient-to-b from-white to-[#004A97] flex flex-col p-4"
+  >
+    <div class="flex-none my-4 text-center">
+      <strong class="text-[20.8px] sm:text-[26px]"
+        >Air Quality Health Effects for Particle Pollution</strong
+      >
+    </div>
+
+    <div id="accordion">
+      <h3 class="bg-[rgb(0,228,0)]">Good [0-50]</h3>
+      <div class="bg-[rgb(0,228,0,0.5)]">
+        <p>
+          Air quality is satisfactory, and air pollution poses little or no
+          risk.
+        </p>
+      </div>
+      <h3 class="bg-[rgb(255,255,0)]">Moderate [51-100]</h3>
+      <div class="bg-[rgb(255,255,0,0.5)]">
+        <p>
+          Air quality is acceptable. However, there may be a risk for some
+          people, particularly those who are unusually sensitive to air
+          pollution.
+        </p>
+      </div>
+      <h3 class="bg-[rgb(255,126,0)] text-white">
+        Unhealthy for Sensitive Groups [101-150]
+      </h3>
+      <div class="bg-[rgb(255,126,0,0.5)] text-white">
+        <p>
+          Members of sensitive groups may experience health effects. The general
+          public is less likely to be affected.
+        </p>
+      </div>
+      <h3 class="bg-[rgb(255,0,0)] text-white">Unhealthy [151-200]]</h3>
+      <div class="bg-[rgb(255,0,0,0.5)] text-white">
+        <p>
+          Some members of the general public may experience health effects;
+          members of sensitive groups may experience more serious health
+          effects.
+        </p>
+      </div>
+      <h3 class="bg-[rgb(143,63,151)] text-white">Very Unhealthy [201-300]</h3>
+      <div class="bg-[rgb(143,63,151,0.5)] text-white">
+        <p>
+          Health alert: The risk of health effects is increased for everyone.
+        </p>
+      </div>
+      <h3 class="bg-[rgb(126,0,35)] text-white">Hazardous [300+]</h3>
+      <div class="bg-[rgb(126,0,35,0.5)] text-white border border-black">
+        <p>
+          Health warning of emergency conditions: everyone is more likely to be
+          affected.
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="slick-scroll mt-8"
+      data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'
+    >
+      <div class="bg-[rgb(0,228,0)] text-center">
+        <div class="w-full h-full">
+          Air quality is satisfactory, and air pollution poses little or no
+          risk.
+        </div>
+      </div>
+      <div class="bg-[yellow]">
+        <h3>
+          Air quality is acceptable. However, there may be a risk for some
+          people, particularly those who are unusually sensitive to air
+          pollution.
+        </h3>
+      </div>
+      <div class="bg-[rgb(255,126,0)] text-white">
+        <h3>
+          Members of sensitive groups may experience health effects. The general
+          public is less likely to be affected.
+        </h3>
+      </div>
+      <div class="bg-[red] text-white">
+        <h3>
+          Some members of the general public may experience health effects;
+          members of sensitive groups may experience more serious health
+          effects.
+        </h3>
+      </div>
+      <div class="bg-[rgb(143,63,151)] text-white">
+        <h3>
+          Health alert: The risk of health effects is increased for everyone.
+        </h3>
+      </div>
+      <div class="bg-[rgb(126,0,35)] text-white">
+        <h3>
+          Health warning of emergency conditions: everyone is more likely to be
+          affected.
+        </h3>
+      </div>
+    </div>
+
+    <table
+      class="mt-24 bg-white flex-grow text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl bg-white border border-black"
+    >
+      <tr class="bg-[rgb(234,234,234)] max-h-[3%]">
+        <th class="text-center p-1 border border-black w-[16%]">
+          Levels of Concern
+        </th>
+        <th class="text-center p-1 border border-black w-[12%]">
+          Values of Index
+        </th>
+        <th class="text-center p-1 border border-black">
+          Description of Air Quality
+        </th>
+      </tr>
+      <tbody>
+        <tr class="text-center p-4 bg-[rgb(0,228,0)]">
+          <td class="p-1 border border-black">Good</td>
+          <td class="p-1 border border-black">0 to 50</td>
+          <td class="p-1 border border-black">
+            Air quality is satisfactory, and air pollution poses little or no
+            risk.
+          </td>
+        </tr>
+        <tr class="text-center" style="background: yellow">
+          <td class="px-1 border border-black">Moderate</td>
+          <td class="px-1 border border-black">51 to 100</td>
+          <td class="px-1 border border-black">
+            Air quality is acceptable. However, there may be a risk for some
+            people, particularly those who are unusually sensitive to air
+            pollution.
+          </td>
+        </tr>
+        <tr
+          class="text-center"
+          style="background: rgb(255, 126, 0); color: white"
+        >
+          <td class="px-1 border border-black">
+            Unhealthy for Sensitive Groups
+          </td>
+          <td class="px-1 border border-black">101 to 150</td>
+          <td class="px-1 border border-black">
+            Members of sensitive groups may experience health effects. The
+            general public is less likely to be affected.
+          </td>
+        </tr>
+        <tr class="text-center" style="background: red; color: white">
+          <td class="px-1 border border-black">Unhealthy</td>
+          <td class="px-1 border border-black">151 to 200</td>
+          <td class="px-1 border border-black">
+            Some members of the general public may experience health effects;
+            members of sensitive groups may experience more serious health
+            effects.
+          </td>
+        </tr>
+        <tr
+          class="text-center"
+          style="background: rgb(143, 63, 151); color: white"
+        >
+          <td class="px-1 border border-black">Very Unhealthy</td>
+          <td class="px-1 border border-black">201 to 300</td>
+          <td class="px-1 border border-black">
+            Health alert: The risk of health effects is increased for everyone.
+          </td>
+        </tr>
+        <tr
+          class="text-center"
+          style="background: rgb(126, 0, 35); color: white"
+        >
+          <td class="px-1 border border-black">Hazardous</td>
+          <td class="px-1 border border-black">301 and higher</td>
+          <td class="px-1 border border-black">
+            Health warning of emergency conditions: everyone is more likely to
+            be affected.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+  </body>
+  <script>
+    $(function () {
+      var icons = {
+        header: "ui-icon-circle-arrow-e",
+        activeHeader: "ui-icon-circle-arrow-s",
+      };
+      $("#accordion").accordion({
+        icons: icons,
+      });
+      $("#toggle")
+        .button()
+        .on("click", function () {
+          if ($("#accordion").accordion("option", "icons")) {
+            $("#accordion").accordion("option", "icons", null);
+          } else {
+            $("#accordion").accordion("option", "icons", icons);
+          }
+        });
+    });
+
+    $(document).ready(function () {
+      $(".slick-scroll").slick({
+        centerMode: true,
+        slidesToShow: 6,
+        centerPadding: "100px",
+        dots: true,
+        arrows: false,
+        responsive: [
+          {
+            breakpoint: 480,
+            settings: {
+              centerMode: true,
+              slidesToShow: 1,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              centerMode: true,
+              slidesToShow: 1,
+            },
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              centerMode: true,
+              slidesToShow: 1,
+            },
+          },
+          {
+            breakpoint: 992,
+            settings: {
+              centerMode: true,
+              slidesToShow: 1,
+            },
+          },
+          {
+            breakpoint: 1200,
+            settings: {
+              centerMode: true,
+              slidesToShow: 1,
+            },
+          },
+          {
+            breakpoint: 5000,
+            settings: {
+              centerMode: true,
+              slidesToShow: 1,
+            },
+          },
+        ],
+      });
+    });
+
+    // $(".slick-scroll").slick({});
+  </script>
+
+  <style>
+    .slick-dots {
+    }
+    .slick-dots li {
+      width: 100px;
+    }
+    .slick-dots li button {
+    }
+
+    .slick-dots li:nth-child(1) button::before {
+      font-family: sans-serif;
+      content: "Good";
+      color: black;
+      background-color: rgb(0, 228, 0);
+      /* Rest of your styling here */
+    }
+    .slick-dots li:nth-child(2) button::before {
+      font-family: sans-serif;
+      content: "Moderate";
+      color: black;
+      background-color: yellow;
+      /* Rest of your styling here */
+    }
+    .slick-dots li:nth-child(3) button::before {
+      font-family: sans-serif;
+      content: " Unhealthy for Sensitive Groups";
+      color: white;
+      background-color: rgb(255, 126, 0);
+      /* Rest of your styling here */
+    }
+    .slick-dots li:nth-child(4) button::before {
+      font-family: sans-serif;
+      content: "Unhealthy";
+      color: white;
+      background-color: red;
+      /* Rest of your styling here */
+    }
+    .slick-dots li:nth-child(5) button::before {
+      font-family: sans-serif;
+      content: "Very Unhealthy";
+      color: white;
+      background-color: rgb(143, 63, 151);
+      /* Rest of your styling here */
+    }
+    .slick-dots li:nth-child(6) button::before {
+      font-family: sans-serif;
+      content: "Hazardous";
+      color: white;
+      background-color: rgb(126, 0, 35);
+      /* Rest of your styling here */
+    }
+
+    .slick-dots li.slick-active button:before {
+      opacity: 0.5;
+      margin-top: 10px;
+      transition: all 0.5s ease-out;
+      transition: 200ms linear 50ms;
+    }
+
+    .slick-dots li button:before {
+      font-size: 12px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 1;
+      height: auto;
+      text-align: center;
+      transition: all 0.5s ease-out;
+      transition: 200ms linear 50ms;
+    }
+  </style>
+</html>
