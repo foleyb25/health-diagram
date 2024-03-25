@@ -36,20 +36,32 @@
       >
     </div>
 
-    <div id="accordion">
-      <h3 class="bg-[rgb(0,228,0)] text-black" style="color: black !important">
+    <div id="accordion" class="text-sm sm:text-xl">
+      <h3
+        class="bg-[rgb(0,228,0)] text-black"
+        style="color: black !important; flex-grow: 1 !important"
+      >
         Good [0-50]
       </h3>
-      <div class="bg-[rgb(0,228,0,0.5)] text-black">
+      <div
+        class="bg-[rgb(0,228,0,0.5)] text-black"
+        style="flex-grow: 2 !important"
+      >
         <p>
           Air quality is satisfactory, and air pollution poses little or no
           risk.
         </p>
       </div>
-      <h3 class="bg-[rgb(255,255,0)]" style="color: black !important">
+      <h3
+        class="bg-[rgb(255,255,0)]"
+        style="color: black !important; flex-grow: 1 !important"
+      >
         Moderate [51-100]
       </h3>
-      <div class="bg-[rgb(255,255,0,0.5)] text-black">
+      <div
+        class="bg-[rgb(255,255,0,0.5)] text-black"
+        style="flex-grow: 2 !important"
+      >
         <p>
           Air quality is acceptable. However, there may be a risk for some
           people, particularly those who are unusually sensitive to air
@@ -57,20 +69,32 @@
         </p>
       </div>
 
-      <h3 class="bg-[rgb(255,126,0)]" style="color: white !important">
+      <h3
+        class="bg-[rgb(255,126,0)]"
+        style="color: white !important; flex-grow: 1 !important"
+      >
         Unhealthy for Sensitive Groups [101-150]
       </h3>
-      <div class="bg-[rgb(255,126,0,0.5)] text-white">
+      <div
+        class="bg-[rgb(255,126,0,0.5)] text-white"
+        style="flex-grow: 2 !important"
+      >
         <p>
           Members of sensitive groups may experience health effects. The general
           public is less likely to be affected.
         </p>
       </div>
 
-      <h3 class="bg-[rgb(255,0,0)]" style="color: white !important">
+      <h3
+        class="bg-[rgb(255,0,0)]"
+        style="color: white !important; flex-grow: 1 !important"
+      >
         Unhealthy [151-200]]
       </h3>
-      <div class="bg-[rgb(255,0,0,0.5)] text-white">
+      <div
+        class="bg-[rgb(255,0,0,0.5)] text-white"
+        style="flex-grow: 2 !important"
+      >
         <p>
           Some members of the general public may experience health effects;
           members of sensitive groups may experience more serious health
@@ -78,19 +102,31 @@
         </p>
       </div>
 
-      <h3 class="bg-[rgb(143,63,151)]" style="color: white !important">
+      <h3
+        class="bg-[rgb(143,63,151)]"
+        style="color: white !important; flex-grow: 1 !important"
+      >
         Very Unhealthy [201-300]
       </h3>
-      <div class="bg-[rgb(143,63,151,0.5)] text-white">
+      <div
+        class="bg-[rgb(143,63,151,0.5)] text-white"
+        style="flex-grow: 2 !important"
+      >
         <p>
           Health alert: The risk of health effects is increased for everyone.
         </p>
       </div>
 
-      <h3 class="bg-[rgb(126,0,35)]" style="color: white !important">
+      <h3
+        class="bg-[rgb(126,0,35)]"
+        style="color: white !important; flex-grow: 1 !important"
+      >
         Hazardous [300+]
       </h3>
-      <div class="bg-[rgb(126,0,35,0.5)] text-white border border-black">
+      <div
+        class="bg-[rgb(126,0,35,0.5)] text-white border border-black"
+        style="flex-grow: 2 !important"
+      >
         <p>
           Health warning of emergency conditions: everyone is more likely to be
           affected.
@@ -124,8 +160,10 @@
   </script>
 
   <style>
-    .ui-accordion-header-icon {
-      color: inherit !important;
+    #accordion {
+      display: flex !important;
+      flex-direction: column;
+      flex-grow: 1 !important;
     }
   </style>
 </html>
