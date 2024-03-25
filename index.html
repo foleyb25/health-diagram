@@ -37,22 +37,27 @@
     </div>
 
     <div id="accordion">
-      <h3 class="bg-[rgb(0,228,0)]">Good [0-50]</h3>
-      <div class="bg-[rgb(0,228,0,0.5)]">
+      <h3 class="bg-[rgb(0,228,0)] text-black" style="color: black !important">
+        Good [0-50]
+      </h3>
+      <div class="bg-[rgb(0,228,0,0.5)] text-black">
         <p>
           Air quality is satisfactory, and air pollution poses little or no
           risk.
         </p>
       </div>
-      <h3 class="bg-[rgb(255,255,0)]">Moderate [51-100]</h3>
-      <div class="bg-[rgb(255,255,0,0.5)]">
+      <h3 class="bg-[rgb(255,255,0)]" style="color: black !important">
+        Moderate [51-100]
+      </h3>
+      <div class="bg-[rgb(255,255,0,0.5)] text-black">
         <p>
           Air quality is acceptable. However, there may be a risk for some
           people, particularly those who are unusually sensitive to air
           pollution.
         </p>
       </div>
-      <h3 class="bg-[rgb(255,126,0)] text-white">
+
+      <h3 class="bg-[rgb(255,126,0)]" style="color: white !important">
         Unhealthy for Sensitive Groups [101-150]
       </h3>
       <div class="bg-[rgb(255,126,0,0.5)] text-white">
@@ -61,7 +66,10 @@
           public is less likely to be affected.
         </p>
       </div>
-      <h3 class="bg-[rgb(255,0,0)] text-white">Unhealthy [151-200]]</h3>
+
+      <h3 class="bg-[rgb(255,0,0)]" style="color: white !important">
+        Unhealthy [151-200]]
+      </h3>
       <div class="bg-[rgb(255,0,0,0.5)] text-white">
         <p>
           Some members of the general public may experience health effects;
@@ -69,13 +77,19 @@
           effects.
         </p>
       </div>
-      <h3 class="bg-[rgb(143,63,151)] text-white">Very Unhealthy [201-300]</h3>
+
+      <h3 class="bg-[rgb(143,63,151)]" style="color: white !important">
+        Very Unhealthy [201-300]
+      </h3>
       <div class="bg-[rgb(143,63,151,0.5)] text-white">
         <p>
           Health alert: The risk of health effects is increased for everyone.
         </p>
       </div>
-      <h3 class="bg-[rgb(126,0,35)] text-white">Hazardous [300+]</h3>
+
+      <h3 class="bg-[rgb(126,0,35)]" style="color: white !important">
+        Hazardous [300+]
+      </h3>
       <div class="bg-[rgb(126,0,35,0.5)] text-white border border-black">
         <p>
           Health warning of emergency conditions: everyone is more likely to be
@@ -91,11 +105,11 @@
   <script>
     $(function () {
       var icons = {
-        header: "ui-icon-circle-arrow-e",
-        activeHeader: "ui-icon-circle-arrow-s",
+        header: "ui-icon-blank",
+        activeHeader: "ui-icon-blank",
       };
       $("#accordion").accordion({
-        collapsable: true,
+        icons: icons,
       });
       $("#toggle")
         .button()
@@ -108,4 +122,10 @@
         });
     });
   </script>
+
+  <style>
+    .ui-accordion-header-icon {
+      color: inherit !important;
+    }
+  </style>
 </html>
