@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script
@@ -22,478 +19,118 @@
       type="text/css"
       data-theme="api-dark"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css"
-    />
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <title>Health Chart</title>
   </head>
-  <body class="h-screen w-screen">
-    <div
-      class="hidden lg:flex h-full w-full flex flex-col items-center bg-white p-4"
-    >
-      <div class="my-4 text-center">
-        <strong class="text-[20.8px] sm:text-[26px]"
-          >Air Quality Health Effects for Particle Pollution</strong
-        >
-      </div>
-
-      <div
-        id="button-container"
-        class="flex flex-row items-center justify-center w-full"
+  <body class="h-screen w-screen overflow-hidden bg-white flex flex-col p-4">
+    <div class="flex-none mb-4 text-center">
+      <strong class="text-[20.8px] sm:text-[26px] p-[0.5rem]"
+        >Air Quality Health Effects for Particle Pollution</strong
       >
-        <button
-          id="good"
-          onclick="handleClick('good')"
-          class="p-1 px-2 left-corner-rounded bg-good flex-grow"
-        >
-          Good
-        </button>
-        <button
-          id="moderate"
-          onclick="handleClick('moderate')"
-          class="p-1 px-2 bg-moderate flex-grow"
-        >
-          Moderate
-        </button>
-        <button
-          id="unhealthyForSensitive"
-          onclick="handleClick('unhealthyForSensitive')"
-          class="p-1 px-2 bg-unhealthy-for-sensitive flex-grow"
-        >
-          Unhealthy For Sensitive People
-        </button>
-        <button
-          id="unhealthy"
-          onclick="handleClick('unhealthy')"
-          class="p-1 px-2 m-0 bg-unhealthy flex-grow"
-        >
-          Unhealthy
-        </button>
-        <button
-          id="veryUnhealthy"
-          onclick="handleClick('veryUnhealthy')"
-          class="p-1 px-2 m-0 bg-very-unhealthy flex-grow"
-        >
-          Very Unhealthy
-        </button>
-        <button
-          id="hazardous"
-          onclick="handleClick('hazardous')"
-          class="p-1 px-2 m-0 right-corner-rounded bg-hazardous flex-grow"
-        >
-          Hazardous
-        </button>
-      </div>
-      <div
-        id="chart-container"
-        class="bg-good flex-grow w-full bg-opacity-50 flex items-center justify-center"
-      >
-        <p class="p-4 z-50">
-          Air quality is satisfactory, and air pollution poses little or no
-          risk.
-        </p>
-      </div>
     </div>
-    <div
-      class="flex lg:hidden h-full w-full overflow-hidden bg-white flex flex-col p-4"
+    <table
+      class="bg-white flex-grow text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl font-medium bg-white border border-black"
     >
-      <div class="flex-none my-4 text-center">
-        <strong class="text-[20.8px] sm:text-[26px]"
-          >Air Quality Health Effects for Particle Pollution</strong
-        >
-      </div>
-
-      <div id="accordion" class="text-sm flex flex-col sm:text-xl">
-        <h3
-          class="bg-[rgb(0,228,0)] text-black"
-          style="color: black !important; flex-grow: 2 !important"
-        >
-          Good [0-50]
-        </h3>
-        <div
-          class="bg-[rgb(0,228,0,0.5)] text-black"
-          style="flex-grow: 2 !important"
-        >
-          <p>
+      <tr class="bg-[rgb(234,234,234)] max-h-[3%]">
+        <th class="text-center font-black p-1 border border-black w-[16%]">
+          Air Quality Level
+        </th>
+        <th class="text-center font-black p-1 border border-black w-[30%]">
+          Action
+        </th>
+        <th class="text-center font-black p-1 border border-black">
+          Description
+        </th>
+      </tr>
+      <tbody>
+        <tr class="text-center p-4 bg-[rgb(0,228,0)]">
+          <td class="px-1 border border-black">
+            Good <br />
+            (0-50)
+          </td>
+          <td class="px-1 border border-black">No limitations</td>
+          <td class="px-1 border border-black">
             Air quality is satisfactory, and air pollution poses little or no
             risk.
-          </p>
-        </div>
-        <h3
-          class="bg-[rgb(255,255,0)]"
-          style="color: black !important; flex-grow: 1 !important"
-        >
-          Moderate [51-100]
-        </h3>
-        <div
-          class="bg-[rgb(255,255,0,0.5)] text-black"
-          style="flex-grow: 2 !important"
-        >
-          <p>
+          </td>
+        </tr>
+        <tr class="text-center" style="background: yellow">
+          <td class="px-1 border border-black">
+            Moderate <br />
+            (51-100)
+          </td>
+          <td class="px-1 border border-black">
+            Monitor sensitive groups and limit their vigorous activities.
+          </td>
+          <td class="px-1 border border-black">
             Air quality is acceptable. However, there may be a risk for some
             people, particularly those who are unusually sensitive to air
             pollution.
-          </p>
-        </div>
-        <h3
-          class="bg-[rgb(255,126,0)]"
-          style="color: white !important; flex-grow: 1 !important"
+          </td>
+        </tr>
+        <tr
+          class="text-center"
+          style="background: rgb(255, 126, 0); color: black"
         >
-          Unhealthy for Sensitive Groups [101-150]
-        </h3>
-        <div
-          class="bg-[rgb(255,126,0,0.5)] text-white"
-          style="flex-grow: 2 !important"
-        >
-          <p>
+          <td class="px-1 border border-black">
+            Unhealthy for Sensitive Groups <br />
+            (101-150)
+          </td>
+          <td class="px-1 border border-black">
+            Sensitive groups should remain indoors as much as possible.
+          </td>
+          <td class="px-1 border border-black">
             Members of sensitive groups may experience health effects. The
             general public is less likely to be affected.
-          </p>
-        </div>
-        <h3
-          class="bg-[rgb(255,0,0)]"
-          style="color: white !important; flex-grow: 1 !important"
-        >
-          Unhealthy [151-200]]
-        </h3>
-        <div
-          class="bg-[rgb(255,0,0,0.5)] text-white"
-          style="flex-grow: 2 !important"
-        >
-          <p>
+          </td>
+        </tr>
+        <tr class="text-center" style="background: red; color: black">
+          <td class="px-1 border border-black">
+            Unhealthy <br />
+            (151-200)
+          </td>
+          <td class="px-1 border border-black">
+            Sensitive groups should remain indoors as much as possible.
+            Non-sensitive groups should take more breaks during outdoor
+            activities.
+          </td>
+          <td class="px-1 border border-black">
             Some members of the general public may experience health effects;
             members of sensitive groups may experience more serious health
             effects.
-          </p>
-        </div>
-        <h3
-          class="bg-[rgb(143,63,151)]"
-          style="color: white !important; flex-grow: 1 !important"
+          </td>
+        </tr>
+        <tr
+          class="text-center"
+          style="background: rgb(143, 63, 151); color: white"
         >
-          Very Unhealthy [201-300]
-        </h3>
-        <div
-          class="bg-[rgb(143,63,151,0.5)] text-white"
-          style="flex-grow: 2 !important"
-        >
-          <p>
+          <td class="px-1 border border-black">
+            Very Unhealthy <br />
+            (201-300)
+          </td>
+          <td class="px-1 border border-black">
+            Sensitive groups should avoid all outdoor activities. Non-sensitive
+            groups should avoid intense outdoor activities.
+          </td>
+          <td class="px-1 border border-black">
             Health alert: The risk of health effects is increased for everyone.
-          </p>
-        </div>
-        <h3
-          class="bg-[rgb(126,0,35)]"
-          style="color: white !important; flex-grow: 1 !important"
+          </td>
+        </tr>
+        <tr
+          class="text-center"
+          style="background: rgb(126, 0, 35); color: white"
         >
-          Hazardous [300+]
-        </h3>
-        <div
-          class="bg-[rgb(126,0,35,0.5)] text-white border border-black"
-          style="flex-grow: 2 !important"
-        >
-          <p>
+          <td class="px-1 border border-black">
+            Hazardous <br />
+            301+
+          </td>
+          <td class="px-1 border border-black">
+            Everyone should avoid all outdoor physical activity.
+          </td>
+          <td class="px-1 border border-black">
             Health warning of emergency conditions: everyone is more likely to
             be affected.
-          </p>
-        </div>
-      </div>
-    </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </body>
-
-  <script>
-    $(function () {
-      var icons = {
-        header: "ui-icon-blank",
-        activeHeader: "ui-icon-blank",
-      };
-      $("#accordion").accordion({
-        icons: icons,
-      });
-      $("#toggle")
-        .button()
-        .on("click", function () {
-          if ($("#accordion").accordion("option", "icons")) {
-            $("#accordion").accordion("option", "icons", null);
-          } else {
-            $("#accordion").accordion("option", "icons", icons);
-          }
-        });
-    });
-  </script>
-
-  <script>
-    var chartContainerHeight = $("#chart-container").height();
-    var activeState = "good";
-
-    const styleDict = {
-      good: "bg-good",
-      moderate: "bg-moderate",
-      unhealthyForSensitive: "bg-unhealthy-for-sensitive",
-      unhealthy: "bg-unhealthy",
-      veryUnhealthy: "bg-very-unhealthy",
-      hazardous: "bg-hazardous",
-    };
-
-    const textDict = {
-      good: "Air quality is satisfactory, and air pollution poses little or no risk.",
-      moderate:
-        "Air quality is acceptable. However, there may be a risk for some people, particularly those who are unusually sensitive to air pollution.",
-      unhealthyForSensitive:
-        "Members of sensitive groups may experience health effects. The general public is less likely to be affected.",
-      unhealthy:
-        "Some members of the general public may experience health effects; members of sensitive groups may experience more serious health effects.",
-      veryUnhealthy:
-        "Health alert: The risk of health effects is increased for everyone.",
-      hazardous:
-        "Health warning of emergency conditions: everyone is more likely to be affected.",
-    };
-
-    const handleClick = (e) => {
-      disableButtons();
-      //get current height and set height styling to disable flickered animations
-      chartContainerHeight = $("#chart-container").height();
-      $("#chart-container").css({ height: chartContainerHeight });
-      removePreviousClass(e);
-      addNewClass();
-    };
-
-    const removePreviousClass = (e) => {
-      //remove flex grow tailwind class to enable animation resizing
-      $("#chart-container").removeClass("flex-grow");
-      $("#chart-container").animate(
-        {
-          height: 0,
-        },
-        300,
-        () => {
-          //once animation to 0 height (hidden) is complete, remove the set background
-          $("#chart-container").removeClass(styleDict[activeState]);
-          activeState = e;
-          //add the new background
-          $("#chart-container").addClass(styleDict[activeState]);
-          $("#chart-container").find("p").text(textDict[activeState]);
-        }
-      );
-    };
-
-    const addNewClass = () => {
-      $("#chart-container").animate(
-        {
-          height: `${chartContainerHeight}px`,
-        },
-        300,
-        () => {
-          //once the animation is complete re-insert flex grow
-          $("#chart-container").addClass("flex-grow");
-          //animation is complete, it is now safe to re-enable buttons
-          enableButtons();
-        }
-      );
-    };
-
-    const disableButtons = () => {
-      $("#good").prop("disabled", true);
-      $("#moderate").prop("disabled", true);
-      $("#unhealthyForSensitive").prop("disabled", true);
-      $("#unhealthy").prop("disabled", true);
-      $("#veryUnhealthy").prop("disabled", true);
-      $("#hazardous").prop("disabled", true);
-    };
-
-    const enableButtons = () => {
-      console.log("Renableing buttons");
-      $("#good").prop("disabled", false);
-      $("#moderate").prop("disabled", false);
-      $("#unhealthyForSensitive").prop("disabled", false);
-      $("#unhealthy").prop("disabled", false);
-      $("#veryUnhealthy").prop("disabled", false);
-      $("#hazardous").prop("disabled", false);
-    };
-  </script>
-
-  <style>
-    #accordion {
-      display: flex !important;
-      flex-direction: column;
-      flex-grow: 1 !important;
-    }
-    /*
-
-    .relative {
-      position: relative;
-    }
-
-    .absolute {
-      position: absolute;
-    } */
-
-    .left-corner-rounded {
-      border-radius: 5px 0px 0px 5px;
-    }
-
-    .right-corner-rounded {
-      border-radius: 0px 5px 5px 0px;
-    }
-
-    .top-corner-rounded {
-      border-radius: 5px 5px 0px 0px;
-    }
-
-    .bg-good {
-      background-color: rgb(0, 228, 0);
-      color: black;
-    }
-
-    .bg-moderate {
-      background-color: rgb(255, 255, 0);
-      color: black;
-    }
-
-    .bg-unhealthy-for-sensitive {
-      background-color: rgb(255, 126, 0);
-      color: white;
-    }
-
-    .bg-unhealthy {
-      background-color: rgb(255, 0, 0);
-      color: white;
-    }
-
-    .bg-very-unhealthy {
-      background-color: rgb(143, 63, 151);
-      color: white;
-    }
-
-    .bg-hazardous {
-      background-color: rgb(126, 0, 35);
-      color: white;
-    }
-
-    /* .inline-block {
-      display: inline-block;
-    }
-
-    .flex-none {
-      display: none;
-    }
-
-    .flex {
-      display: flex;
-    }
-
-    .flex-col {
-      flex-direction: column;
-    }
-
-    .flex-row {
-      flex-direction: row;
-    }
-
-    .flex-grow-1 {
-      flex-grow: 1;
-    }
-
-    .flex-grow-2 {
-      flex-grow: 2;
-    }
-
-    .flex-grow-3 {
-      flex-grow: 3;
-    }
-
-    .items-center {
-      align-items: center;
-    }
-
-    .justify-center {
-      justify-content: center;
-    }
-
-    .p-0 {
-      padding: 0px;
-    }
-
-    .p-1 {
-      padding: 0.25rem;
-    }
-
-    .p-2 {
-      padding: 0.5rem;
-    }
-
-    .p-3 {
-      padding: 0.75rem;
-    }
-
-    .p-4 {
-      padding: 1rem;
-    }
-
-    .p-8 {
-      padding: 2rem;
-    }
-
-    .px-1 {
-      padding-left: 0.25rem;
-      padding-right: 0.25rem;
-    }
-
-    .px-2 {
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-    }
-
-    .px-3 {
-      padding-left: 0.75rem;
-      padding-right: 0.75rem;
-    }
-
-    .px-4 {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-
-    .px-8 {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-
-    .py-1 {
-      padding-top: 0.25rem;
-      padding-bottom: 0.25rem;
-    }
-
-    .py-2 {
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-    }
-
-    .py-3 {
-      padding-top: 0.75rem;
-      padding-bottom: 0.75rem;
-    }
-
-    .py-4 {
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-    }
-
-    .py-8 {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-    }
-
-    .h-screen {
-      height: 100vh;
-    }
-
-    .w-full {
-      width: 100%;
-    }
-
-    .text-center {
-      text-align: center;
-    } */
-  </style>
 </html>
