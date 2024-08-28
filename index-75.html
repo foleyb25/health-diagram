@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://js.arcgis.com/calcite-components/2.6.0/calcite.esm.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://js.arcgis.com/calcite-components/2.6.0/calcite.css"
+    />
+    <!-- imports avenir font -->
+    <link
+      href="https://gis.mtdeq.us/portal/jsapi/jsapi4/esri/themes/dark/main.css"
+      rel="stylesheet"
+      type="text/css"
+      data-theme="api-dark"
+    />
+	<style>
+		:root {
+			--global-opacity: 0.75;
+		}
+	</style>
+  </head>
+  <body class="h-screen w-screen overflow-hidden bg-[#004A97] flex flex-col">
+    <div class="text-center">
+      <strong class="text-white text-[.9rem] sm:text-[1.25rem] p-[0.5rem]"
+        >Air Quality Health Effects for Particle Pollution</strong
+      >
+    </div>
+    <table
+      class="bg-white flex-grow text-xs md:text-sm lg:text-base font-medium bg-white border border-black"
+    >
+	<thead>
+      <tr class="bg-[rgb(234,234,234)]">
+        <th class="text-center text-[.9rem] sm:text-[1.25rem] font-black p-1">
+          Levels
+        </th>
+        <th class="text-start text-[.9rem] sm:text-[1.25rem] font-black p-1">
+          Description
+        </th>
+		<th class="text-start text-[.9rem] sm:text-[1.25rem] font-black p-1">
+          Action
+        </th>
+      </tr>
+	</thead>
+      <tbody>
+        <tr class="text-center border-b border-black bg-[rgb(0,228,0,var(--global-opacity))]">
+          <td class="px-1 bg-[rgb(0,228,0)]">
+            Good <br />
+            (0-50)
+          </td>
+          <td class="px-1 text-start">
+            Air quality is satisfactory, and air pollution poses little or no
+            risk.
+          </td>
+		  <td class="px-1 text-start">No limitations</td>
+        </tr>
+        <tr class="text-center border-b border-black bg-[rgb(255,255,0,var(--global-opacity))]">
+          <td class="bg-[yellow]">
+            Moderate <br />
+            (51-100)
+          </td>
+          <td class="px-1 text-start">
+            Air quality is acceptable. However, there may be a risk for some
+            people, particularly those who are unusually sensitive to air
+            pollution.
+          </td>
+		  <td class="px-1 text-start">
+            Monitor sensitive groups and limit their vigorous activities.
+          </td>
+        </tr>
+        <tr
+          class="text-center border-b border-black bg-[rgb(255,126,0,var(--global-opacity))]"
+        >
+          <td class="px-1 bg-[rgb(255,126,0)]">
+            Unhealthy for Sensitive Groups <br />
+            (101-150)
+          </td>
+          <td class="px-1 text-start">
+            Members of sensitive groups may experience health effects. The
+            general public is less likely to be affected.
+          </td>
+		  <td class="px-1 text-start">
+            Sensitive groups should remain indoors as much as possible.
+          </td>
+        </tr>
+        <tr class="text-center border-b border-black bg-[rgb(255,0,0,var(--global-opacity))]">
+          <td class="px-1 bg-[red] text-white">
+            Unhealthy <br />
+            (151-200)
+          </td>
+          <td class="px-1 text-start">
+            Some members of the general public may experience health effects;
+            members of sensitive groups may experience more serious health
+            effects.
+          </td>
+		  <td class="px-1 text-start">
+            Sensitive groups should remain indoors as much as possible.
+            Non-sensitive groups should take more breaks during outdoor
+            activities.
+          </td>
+        </tr>
+        <tr
+          class="text-center border-b border-black bg-[rgb(143,63,151,var(--global-opacity))]"
+        >
+          <td class="px-1 bg-[rgb(143,63,151)] text-white">
+            Very Unhealthy <br />
+            (201-300)
+          </td>
+          <td class="px-1 text-start">
+            Health alert: The risk of health effects is increased for everyone.
+          </td>
+		  <td class="px-1 text-start">
+            Sensitive groups should avoid all outdoor activities. Non-sensitive
+            groups should avoid intense outdoor activities.
+          </td>
+        </tr>
+        <tr
+          class="text-center border-b border-black bg-[rgb(126,0,35,var(--global-opacity))]"
+        >
+          <td class="px-1 bg-[rgb(126,0,35)] text-white">
+            Hazardous <br />
+            (301+)
+          </td>
+          <td class="px-1 text-start">
+            Health warning of emergency conditions: everyone is more likely to
+            be affected.
+          </td>
+		  <td class="px-1 text-start">
+            Everyone should avoid all outdoor physical activity.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
