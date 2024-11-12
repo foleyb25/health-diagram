@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- UNCOMMENT THIS TAILWIND CDN IMPORT FOR DEVELOPMENT -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- USE THIS REFERENCE LINK FOR PRODUCTION. SEE README.md -->
+    <!-- <link rel="stylesheet" href="./output.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://js.arcgis.com/calcite-components/2.6.0/calcite.esm.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://js.arcgis.com/calcite-components/2.6.0/calcite.css"
+    />
+    <!-- imports avenir font -->
+    <link
+      href="https://gis.mtdeq.us/portal/jsapi/jsapi4/esri/themes/dark/main.css"
+      rel="stylesheet"
+      type="text/css"
+      data-theme="api-dark"
+    />
+	<style>
+		:root {
+			--global-opacity: 0.5;
+			--dot-dimension: 14px;
+		}
+	</style>
+  </head>
+  <body class="h-screen w-screen overflow-hidden bg-[#004A97] flex flex-col">
+    <div class="text-center">
+      <strong class="text-white text-[.9rem] sm:text-[1.25rem] p-[0.5rem]"
+        >Air Quality Health Effects for Particle Pollution</strong
+      >
+    </div>
+    <table
+      class="bg-white flex-grow text-xs font-medium border border-black"
+    >
+	<thead>
+      <tr class="text-[.9rem] sm:text-[1.10rem] bg-[rgb(234,234,234)]">
+		<th class="bg-black p-3 border-r border-black"></th>
+        <th class="text-start p-1">
+          Levels of Concern
+        </th>
+        <th class="text-start p-1">
+          Description of Air Quality
+        </th>
+		<th class="text-start p-1">
+          Action
+        </th>
+      </tr>
+	</thead>
+      <tbody>
+        <tr class="text-start border-b border-black bg-[rgb(56,168,0,var(--global-opacity))]">
+		  <td class=" bg-[rgb(0,228,0)] p-2 border-r border-black"> </td>
+          <td class="px-1 text-start">
+            Good <br />
+            (0-50)
+          </td>
+          <td class="px-2">
+            Air quality is good.
+          </td>
+		  <td class="px-1">No limitations.</td>
+        </tr>
+        <tr class="text-start border-b border-black bg-[rgb(255,255,0,var(--global-opacity))] ">
+		  <td class=" bg-[yellow] p-2 border-r border-black"> </td>
+          <td class="px-1">
+            Moderate <br />
+            (51-100)
+          </td>
+          <td class="px-2">
+            Air quality is acceptable. People unusually sensitive to air pollution may begin to notice health impacts.
+          </td>
+		  <td class="px-1">
+            Sensitive individuals should monitor personal health and may need to limit vigorous outdoor activities. 
+          </td>
+        </tr>
+        <tr
+          class="text-start border-b border-black bg-[rgb(255,170,0,var(--global-opacity))]"
+        >
+		<td class=" bg-[rgb(255,126,0)] p-2 border-r border-black"> </td>
+
+          <td class="px-1">
+            Unhealthy for Sensitive Groups <br />
+            (101-150)
+          </td>
+          <td class="px-2">
+            Members of sensitive groups may experience adverse health effects. The general public is less likely to be affected. 
+            Sensitive groups include people with heart or lung conditions, older, adults, children, pregnant women, and people who work outdoors.
+          </td>
+		  <td class="px-1">
+            Sensitive individuals should minimize outdoor activity and retreat to an indoor clean air space if symptomatic. People with asthma, respiratory or cardiovascular illness should be medically managing their condition.
+          </td>
+        </tr>
+        <tr class="text-start border-b border-black bg-[rgb(255,0,0,var(--global-opacity))] ">
+		<td class=" bg-[red] p-2 border-r border-black">  </td>
+          <td class="px-1">
+            Unhealthy <br />
+            (151-200)
+          </td>
+          <td class="px-2">
+            Air pollution levels are unhealthy for all people. Health effects on sensitive populations can be serious.
+          </td>
+		  <td class="px-1">
+            Everyone benefits from remaining in a clean indoor air space. Shut windows and doors. Activate indoor air filters. If outdoors, keep activities light and short in duration. Retreat to an indoor clean air space if symptomatic.
+          </td>
+        </tr>
+        <tr
+          class="text-start border-b border-black bg-[rgb(169,0,230,var(--global-opacity))]"
+        >
+		<td class=" bg-[rgb(143,63,151)] p-2 border-r border-black"> </td>
+          <td class="px-1">
+            Very Unhealthy <br />
+            (201-300)
+          </td>
+          <td class="px-2">
+            The risk of negative health effects is increased for the entire population. 
+          </td>
+		  <td class="px-1">
+            Everyone should minimize outdoor time. Retreat to indoor clean air spaces. Reschedule or relocate outdoor events.
+          </td>
+        </tr>
+        <tr
+          class="text-start border-b border-black bg-[rgb(168,0,0,var(--global-opacity))]"
+        >
+		<td class=" bg-[rgb(126,0,35)] p-2 border-r border-black" > </td>
+          <td class="px-1">
+            Hazardous <br />
+            (301+)
+          </td>
+          <td class="px-2">
+            Air pollution levels are harmful to all people. Anyone could experience serious health effects.
+          </td>
+		  <td class="px-1">
+            Stay indoors. Remain in indoor clean air spaces. Reschedule or relocate outdoor events. 
+          </td>
+        </tr>
+		<tr
+          class="text-start border-b border-black  text-black bg-[rgb(194,194,194)]"
+        >
+				  <td class=" bg-[rgb(153,153,153)] border-r border-black"> </td>
+
+          <td class="px-1">
+            Data Unavailable
+          </td>
+          <td class="px-2">
+            Station is down due to instrument malfunction, power failure, calibration or maintenance.
+          </td>
+          <td class="px-1">
+            Connectivity will be reestablished as soon as possible.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
