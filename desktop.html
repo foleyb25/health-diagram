@@ -2,9 +2,9 @@
 <html>
   <head>
     <!-- UNCOMMENT THIS TAILWIND CDN IMPORT FOR DEVELOPMENT -->
-    <script src="https://cdn.tailwindcss.com"></script> 
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <!-- USE THIS REFERENCE LINK FOR PRODUCTION - SEE README.md -->
-    <!-- <link rel="stylesheet" href="./output.css"> -->
+    <link rel="stylesheet" href="./output.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script
       type="module"
@@ -58,7 +58,7 @@
         <th class="text-start p-1">
           Description of Air Quality
         </th>
-		<th class="text-start p-1">
+		<th class="text-start py-1 pl-1 pr-4">
           Action
         </th>
       </tr>
@@ -73,7 +73,7 @@
           <td class="px-2">
             Air quality is good.
           </td>
-		  <td class="px-1">No limitations.</td>
+		  <td class="py-1 pr-4">No limitations.</td>
         </tr>
         <tr class="text-start border-b border-black bg-[rgb(255,255,0,var(--global-opacity))] ">
 		  <td class=" bg-[yellow] p-2 border-r border-black"> </td>
@@ -84,14 +84,14 @@
           <td class="px-2">
             Air quality is acceptable. People unusually sensitive to air pollution may begin to notice health impacts.
           </td>
-		  <td class="px-1">
+		  <td class="py-1 pr-4">
             Sensitive individuals should monitor personal health and may need to limit vigorous outdoor activities. 
           </td>
         </tr>
         <tr
           class="text-start border-b border-black bg-[rgb(255,170,0,var(--global-opacity))]"
         >
-		<td class=" bg-[rgb(255,126,0)] p-2 border-r border-black"> </td>
+		<td class=" bg-[rgb(255,126,0)] border-r border-black"> </td>
 
           <td class="px-1">
             Unhealthy for Sensitive Groups <br />
@@ -99,9 +99,9 @@
           </td>
           <td class="px-2">
             Members of sensitive groups may experience adverse health effects. The general public is less likely to be affected. 
-            Sensitive groups include people with heart or lung conditions, older, adults, children, pregnant women, and people who work outdoors.
+            Sensitive groups include people with heart or lung conditions, older adults, children, pregnant women, and people who work outdoors.
           </td>
-		  <td class="px-1">
+		  <td class="py-1 pr-4">
             Sensitive individuals should minimize outdoor activity and retreat to an indoor clean air space if symptomatic. People with asthma, respiratory or cardiovascular illness should be medically managing their condition.
           </td>
         </tr>
@@ -114,7 +114,7 @@
           <td class="px-2">
             Air pollution levels are unhealthy for all people. Health effects on sensitive populations can be serious.
           </td>
-		  <td class="px-1">
+		  <td class="py-1 pr-4">
             Everyone benefits from remaining in a clean indoor air space. Shut windows and doors. Activate indoor air filters. If outdoors, keep activities light and short in duration. Retreat to an indoor clean air space if symptomatic.
           </td>
         </tr>
@@ -129,7 +129,7 @@
           <td class="px-2">
             The risk of negative health effects is increased for the entire population. 
           </td>
-		  <td class="px-1">
+		  <td class="py-1 pr-4">
             Everyone should minimize outdoor time. Retreat to indoor clean air spaces. Reschedule or relocate outdoor events.
           </td>
         </tr>
@@ -144,7 +144,7 @@
           <td class="px-2">
             Air pollution levels are harmful to all people. Anyone could experience serious health effects.
           </td>
-		  <td class="px-1">
+		  <td class="py-1 pr-4">
             Stay indoors. Remain in indoor clean air spaces. Reschedule or relocate outdoor events. 
           </td>
         </tr>
@@ -159,7 +159,7 @@
           <td class="px-2">
             Station is down due to instrument malfunction, power failure, calibration or maintenance.
           </td>
-          <td class="px-1">
+          <td class="py-1 pr-4">
             Connectivity will be reestablished as soon as possible.
           </td>
         </tr>
